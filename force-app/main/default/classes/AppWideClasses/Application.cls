@@ -2,12 +2,12 @@
 public with sharing class Application {
     
 
-    /**@description Configure and create the SelectorFactory for this Application */
-    public static final fflib_Application.SelectorFactory Selector = 
-        new fflib_Application.SelectorFactory(
-            //Map sObject types to their corresponding Selector classes
-            new Map<Schema.SObjectType, Type>{
-                Contact.SObjectType => ContactSelector.class
+    public static final fflib__Application.ServiceFactory Service = 
+        new fflib__Application.ServiceFactory(
+            new Map<Type, Type>{
+                IOpportunitiesService.class => OpportunitiesServiceImpl.class
             }
         );
+
+        //This is where we could overwrite the service factory via Custom Metadata to allow for different implementations per environment
 }

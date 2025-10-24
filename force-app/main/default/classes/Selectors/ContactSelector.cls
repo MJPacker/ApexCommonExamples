@@ -42,3 +42,4 @@ public with sharing class ContactSelector extends ApplicationSelector {
         return (List<Contact>) Database.query(qf.toSOQL()); //Execute the query and return results
     }
 }
+

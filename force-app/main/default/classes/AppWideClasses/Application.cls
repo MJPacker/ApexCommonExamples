@@ -2,12 +2,14 @@
 public with sharing class Application {
     
 
-    /**@description Configure and create the SelectorFactory for this Application */
-    public static final fflib_Application.SelectorFactory Selector = 
-        new fflib_Application.SelectorFactory(
-            //Map sObject types to their corresponding Selector classes
+   /**
+    * @description Factory Domain mapping for application
+    */
+    public static final fflib_Application.DomainFactory Domain = 
+        new fflib_Application.DomainFactory(
+            //Map sObject types to their corresponding Domain classes
             new Map<Schema.SObjectType, Type>{
-                Contact.SObjectType => ContactSelector.class
-            }
+                Job__c.SObjectType => Jobs.Constructor.class
+            } 
         );
 }

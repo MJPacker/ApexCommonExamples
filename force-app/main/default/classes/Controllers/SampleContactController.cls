@@ -10,4 +10,10 @@ public with sharing class SampleContactController {
         List<Contact> contacts = Application.Selector.selectContactsByEmailDomain(emailDomain);
         return contacts;
     }
+
+    //You can also call the selector directly if you'd rather not use the application class, but this does not support mocking as well. 
+    public List<Contact> getContactsDirectlyByEmailDomain(String emailDomain) {
+        ContactSelector contactSelector = new ContactSelector();
+        return contactSelector.selectContactsByEmailDomain(emailDomain);
+    }
 }
